@@ -9,7 +9,7 @@ const shellAliases = {
 
 async function execStep(c: RunsInController): Promise<void> {
   const rawShell = core.getInput("shell");
-  const shell = shellAliases[rawShell] ?? rawShell ?? "bash -e {0}";
+  const shell = shellAliases[rawShell] || rawShell || "bash -e {0}";
 
   const run = core.getInput("run");
 
